@@ -56,13 +56,12 @@ func notInsideBounds(y, x, numRows, numCols int) bool {
 func randomNumbers(limit, count int) []int {
 	numbers := ds.NewSet[int]()
 	for numbers.Len() != count {
-		x := rand.IntN(limit)
-		numbers.Add(x)
+		numbers.Add(rand.IntN(limit))
 	}
 	return numbers.Items()
 }
 
-func displayGrid[T int](grid Grid[T], toString func(T) string) {
+func displayGrid[T any](grid Grid[T], toString func(T) string) {
 	for _, row := range grid {
 		line := make([]string, len(row))
 		for i, cell := range row {
