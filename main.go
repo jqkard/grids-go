@@ -1,6 +1,19 @@
 package main
 
+const (
+	MINES = "mines"
+	GREED = "greed"
+)
+
 func main() {
-	grid := newMines(9, 9, 10)
-	displayMines(grid)
+	option := GREED
+	switch option {
+	case MINES:
+		grid := newMines(9, 9, 10)
+		displayMines(grid)
+	case GREED:
+		grid := newGreed()
+		displayGreed(grid)
+	}
+
 }

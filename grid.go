@@ -1,7 +1,9 @@
 package main
 
 import (
+	"fmt"
 	"math/rand/v2"
+	"strings"
 
 	"github.com/jqkard/fn/ds"
 )
@@ -58,4 +60,14 @@ func randomNumbers(limit, count int) []int {
 		numbers.Add(x)
 	}
 	return numbers.Items()
+}
+
+func displayGrid[T int](grid Grid[T], toString func(T) string) {
+	for _, row := range grid {
+		line := make([]string, len(row))
+		for i, cell := range row {
+			line[i] = toString(cell)
+		}
+		fmt.Println(strings.Join(line, ""))
+	}
 }

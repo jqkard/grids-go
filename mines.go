@@ -2,7 +2,6 @@ package main
 
 import (
 	"fmt"
-	"strings"
 
 	"github.com/jqkard/fn/ds"
 )
@@ -37,15 +36,10 @@ func newMines(numRows, numCols, numMines int) Grid[int] {
 }
 
 func displayMines(grid Grid[int]) {
-	for _, row := range grid {
-		line := make([]string, len(row))
-		for i, cell := range row {
-			if cell == bomb {
-				line[i] = fmt.Sprintf("%3s", "X")
-			} else {
-				line[i] = fmt.Sprintf("%3d", cell)
-			}
+	displayGrid(grid, func(cell int) string {
+		if cell == bomb {
+			return fmt.Sprintf("%3s", "X")
 		}
-		fmt.Println(strings.Join(line, ""))
-	}
+		return fmt.Sprintf("%3d", cell)
+	})
 }

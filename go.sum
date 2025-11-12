@@ -1,4 +1,6 @@
 github.com/jqkard/fn v0.1.13 h1:hSbTdEy92lcQRL919ZhRKXJiP/hIwvQLB+ADOXGxepI=
 github.com/jqkard/fn v0.1.13/go.mod h1:+cDHDKVVi6pbocAEBABQ3EH1OSSYmUDVZL6mSeORCX4=
+github.com/jqkard/fn v0.1.14 h1:AdO1xG4wWtTxF/m40CmDO3N8Znp+bObCvPSmXIHWjsc=
+github.com/jqkard/fn v0.1.14/go.mod h1:+cDHDKVVi6pbocAEBABQ3EH1OSSYmUDVZL6mSeORCX4=
 golang.org/x/text v0.30.0 h1:yznKA/E9zq54KzlzBEAWn1NXSQ8DIp/NYMy88xJjl4k=
 golang.org/x/text v0.30.0/go.mod h1:yDdHFIX9t+tORqspjENWgzaCVXgk0yYnYuSZ8UzzBVM=
