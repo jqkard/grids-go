@@ -3,6 +3,8 @@ package main
 import (
 	"fmt"
 	"math/rand/v2"
+	"os"
+	"os/exec"
 	"strings"
 
 	"github.com/jqkard/fn/ds"
@@ -69,4 +71,10 @@ func displayGrid[T any](grid Grid[T], toString func(T) string) {
 		}
 		fmt.Println(strings.Join(line, ""))
 	}
+}
+
+func clearScreen() {
+	cmd := exec.Command("cmd", "/c", "cls")
+	cmd.Stdout = os.Stdout
+	cmd.Run()
 }

@@ -1,5 +1,7 @@
 package main
 
+import "time"
+
 const (
 	MINES  = "mines"
 	GREED  = "greed"
@@ -8,7 +10,7 @@ const (
 )
 
 func main() {
-	option := T2048
+	option := CONWAY
 	switch option {
 	case MINES:
 		grid := newMines(9, 9, 10)
@@ -18,9 +20,20 @@ func main() {
 		displayGreed(grid)
 	case CONWAY:
 		grid := newConway(50, 250, 500)
-		displayConway(grid)
+		runLoop(grid, displayConway, nextConway, 100)
 	case T2048:
 		grid := new2048()
 		display2048(grid)
+	}
+}
+
+func runLoop[T any](grid Grid[T], displayFn func(Grid[T]), nextFn func(Grid[T]) Grid[T], delayMs int) {
+	for {
+		clearScreen()
+		displayFn(grid)
+		if delayMs > 0 {
+			time.Sleep(time.Duration(delayMs) * time.Millisecond)
+		}
+		grid = nextFn(grid)
 	}
 }
